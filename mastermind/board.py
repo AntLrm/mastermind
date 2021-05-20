@@ -9,8 +9,18 @@ class board():
         self.try_list = []
         self.master = master()
         self.issolved = False
-        
- 
+
+    def __init__(self, code_size, number_of_colors, secret_code):
+        self.code_size = code_size
+        self.number_of_colors = number_of_colors
+        self.secret_code = secret_code
+        self.try_list = []
+        self.master = master()
+        self.issolved = False 
+
+    def add_full_try(self, guess, evaluation):
+        self.try_list.append([guess, evaluation])
+
     def add_try(self, guess):
         if self.is_guess_format_valid(guess):
             self.try_list.append([guess, self.master.evaluate_guess(guess, self.secret_code)])

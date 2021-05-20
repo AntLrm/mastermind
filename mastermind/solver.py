@@ -7,7 +7,7 @@ class solver():
     def __init__(self):
         self.master = master()
         self.guess_set = []
-        
+            
     def solve(self, board):
         while board.issolved == False:
             board.add_try(self.next_guess(board))
